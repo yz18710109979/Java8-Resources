@@ -29,27 +29,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/**
- * <P>An exception that provides information on a database access
- * error or other errors.
- *
- * <P>Each <code>SQLException</code> provides several kinds of information:
- * <UL>
- *   <LI> a string describing the error.  This is used as the Java Exception
- *       message, available via the method <code>getMesasge</code>.
- *   <LI> a "SQLstate" string, which follows either the XOPEN SQLstate conventions
- *        or the SQL:2003 conventions.
- *       The values of the SQLState string are described in the appropriate spec.
- *       The <code>DatabaseMetaData</code> method <code>getSQLStateType</code>
- *       can be used to discover whether the driver returns the XOPEN type or
- *       the SQL:2003 type.
- *   <LI> an integer error code that is specific to each vendor.  Normally this will
- *       be the actual error code returned by the underlying database.
- *   <LI> a chain to a next Exception.  This can be used to provide additional
- *       error information.
- *   <LI> the causal relationship, if any for this <code>SQLException</code>.
- * </UL>
- */
 public class SQLException extends java.lang.Exception
                           implements Iterable<Throwable> {
 
